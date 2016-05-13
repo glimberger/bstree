@@ -1,0 +1,61 @@
+/*! CSS for glimtree */
+
+$vline-offset-default:              20px;
+$vline-height-default:              calc(100% - 20px);
+$vline-offset-data:                 12px;
+$vline-height-data:                 calc(100% - 12px);
+$vline-left:                        8px;
+$hline-width:                       22px;
+$hline-left:                        $vline-left;
+$hline-margintop:                   12px;
+
+.bstree,
+.bstree ul {
+    list-style: none;
+    position: relative;
+}
+.bstree-vline {
+    position: absolute;
+    border-left: 1px solid;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: $vline-left;
+    top: 0;
+    width: 0;
+    height: calc(100% - 20px);
+}
+
+.bstree-children li::before {
+    position: absolute;
+    height: 0;
+    left: $hline-left;
+    width: $hline-width;
+    content: "";
+    display: block;
+    margin-top: $hline-margintop;
+    border-top: 1px solid;
+}
+
+.bstree-data {
+    .bstree-vline {
+        height: calc(100% - 12px);
+    }
+}
+
+.bstree-incomplete > .checkbox label {
+    text-decoration: underline;
+}
+
+.bstree-chevron {
+    cursor: pointer;
+}
+
+.bstree input[type=checkbox] {
+    margin-top: 0.3rem;
+}
+
+// re-align the checkbox button
+.c-checkbox .c-indicator {
+    margin-top: 2px;
+}
