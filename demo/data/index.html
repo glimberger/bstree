@@ -344,20 +344,22 @@
     <script src="../../src/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../../src/js/jquery.bstree.js"></script>
     <script>
-        $hiddenInput = $('#bstree-data');
-        $('#mytree').bstree({
-            dataSource: $hiddenInput,
-            initValues: $hiddenInput.data('ancestors'),
-            onDataPush: function (values) {
-                var def = '<strong class="pull-left">Values:&nbsp;</strong>';
-                for (var i in values) {
-                    def += '<span class="pull-left">' + values[i] + '&nbsp;</span>';
+        $("document").ready(function () {
+            $hiddenInput = $('#bstree-data');
+            $('#mytree').bstree({
+                dataSource: $hiddenInput,
+                initValues: $hiddenInput.data('ancestors'),
+                onDataPush: function (values) {
+                    var def = '<strong class="pull-left">Values:&nbsp;</strong>';
+                    for (var i in values) {
+                        def += '<span class="pull-left">' + values[i] + '&nbsp;</span>';
+                    }
+                    $('#status').html(def);
+                },
+                updateNodeTitle: function (node, title) {
+                    return '[' + node.attr('data-id') + '] ' + title + ' (' + node.attr('data-level') + ')';
                 }
-                $('#status').html(def);
-            },
-            updateNodeTitle: function(node, title) {
-                return '[' + node.attr('data-id') + '] ' + title + ' (' + node.attr('data-level') + ')';
-            }
+            });
         });
     </script>
 </body>

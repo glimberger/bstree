@@ -4,35 +4,38 @@
   list-style: none;
   position: relative; }
 
-.bstree_vline {
+.bstree-vline {
   position: absolute;
   border-left: 1px solid;
   bottom: 0;
   content: "";
   display: block;
-  left: 6px;
+  left: 8px;
   top: 0;
   width: 0;
   height: calc(100% - 20px); }
 
-.has-data .bstree_vline {
-  height: calc(100% - 12px); }
-
-.bstree_children li::before {
+.bstree-children li::before {
   position: absolute;
   height: 0;
-  left: 6px;
-  width: 30px;
+  left: 8px;
+  width: 22px;
   content: "";
   display: block;
   margin-top: 12px;
   border-top: 1px solid; }
 
-.bstree_incomplete > .checkbox label {
+.bstree-data .bstree-vline {
+  height: calc(100% - 12px); }
+
+.bstree-incomplete > .checkbox label {
   text-decoration: underline; }
 
-.bstree_chevron {
+.bstree-chevron {
   cursor: pointer; }
 
 .bstree input[type=checkbox] {
   margin-top: 0.3rem; }
+
+.c-checkbox .c-indicator {
+  margin-top: 2px; }

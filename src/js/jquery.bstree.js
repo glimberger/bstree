@@ -1,10 +1,10 @@
 /*
- *  Project:     Bstree
+ *  Project:     bs-tree
  *  Description: The jQuery plugin Bstree enhances the display of a tree build of unordered lists with possibilities to
  *               open or close nodes, add icons and deal with data.
  *               If a data provider is supplied, dynamically-added three-state checkboxes can update these data feed a
  *               control with it.
- *               All generated html classes are modifiables. Chevron icons and label icons can be customized.
+ *               All generated html classes are modifiable. Chevron icons and label icons can be customized.
  *               It also possible to update nodes title dynamically and trigger an action when data is updated.
  *  Author:      Guillaume Limberger <glim.dev@gmail.com>
  *  License:     MIT

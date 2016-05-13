@@ -336,10 +336,12 @@
     <script src="../../src/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../../src/js/jquery.bstree.js"></script>
     <script>
-        $('#mytree').bstree({
-//            updateNodeTitle: function(node, title) {
-//                return '<span class="label label-default">' + node.attr('data-id') + '</span> ' + title;
-//            }
+        $("document").ready(function () {
+            $('#mytree').bstree({
+                updateNodeTitle: function (node, title) {
+                    return '<span class="label label-default">' + node.attr('data-id') + '</span> ' + title;
+                }
+            });
         });
     </script>
 </body>
