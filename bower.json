@@ -1,7 +1,7 @@
 {
-  "name": "glimtree",
-  "description": "glimtree is a jQuery plugin that provides hierarchical trees build from html unordered lists. The presentation relies on Bootstrap 4 and Font Awesome icons.",
-  "main": "index.js",
+  "name": "bstree",
+  "description": "bstree is a jQuery plugin that provides hierarchical trees build from html unordered lists.",
+  "main": "src/js/bstree.js",
   "authors": [
     "Guillaume Limberger <glim.dev@gmail.com>"
   ],
@@ -17,7 +17,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src/vendor"
   ],
   "dependencies": {
     "bootstrap": "v4.0.0-alpha.2",
