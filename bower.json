@@ -1,6 +1,6 @@
 {
-  "name": "bstree",
-  "description": "bstree is a jQuery plugin that provides hierarchical trees build from html unordered lists.",
+  "name": "bs-tree",
+  "description": "bs-tree is a jQuery plugin that provides hierarchical trees build from html unordered lists.",
   "main": "src/js/bstree.js",
   "authors": [
     "Guillaume Limberger <glim.dev@gmail.com>"
