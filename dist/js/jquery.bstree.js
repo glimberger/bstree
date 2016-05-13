@@ -1,19 +1,17 @@
 /*
- *  Project:     Ifa tree
- *  Description: The jQuery plugin ifatree enhances the view of a tree build of unordered lists with possibilities to
+ *  Project:     bs-tree
+ *  Description: The jQuery plugin Bstree enhances the display of a tree build of unordered lists with possibilities to
  *               open or close nodes, add icons and deal with data.
- *               If a data provider is supplied, dynamically-added checkboxes can update these data, also a label is
- *               underlined  when its related node is incomplete.
- *               All generated html classes are modifiables.
- *               Chevron icons and label icons can be customized.
+ *               If a data provider is supplied, dynamically-added three-state checkboxes can update these data feed a
+ *               control with it.
+ *               All generated html classes are modifiable. Chevron icons and label icons can be customized.
+ *               It also possible to update nodes title dynamically and trigger an action when data is updated.
  *  Author:      Guillaume Limberger <glim.dev@gmail.com>
  *  License:     MIT
  *
- *  Notes      : A node is declared 'incomplete' when one of its children checkbox at least is checked and one at least
- *               is unchecked.
  *
  *  HTML code example:
- *  <div id="ROLE_SUPER_ADMIN_tree" class="ifa_tree" data-id="ROLE_SUPER_ADMIN">
+ *  <div id="mytree" class="bstree">
  *      <ul>
  *          <li data-id="PCA" data-level="1">
  *              <span>Provence-Alpes-Côte d'Azur</span>
@@ -27,8 +25,7 @@
  *  </div>
  *  <script>
  *      $("document").ready(function (){
- *          $('.ifa_tree').each(function () {
- *              var id = $(this).data('id');
+ *          $('.bstree').each(function () {
  *              $(this).ifatree();
  *          });
  *      });
@@ -78,21 +75,24 @@
             chevronOpened       : '<i class="fa fa-toggle-down fa-lg"></i>',    // the icon used for an opened node
             chevronClosed       : '<i class="fa fa-toggle-right fa-lg"></i>',   // the icon used for a closed node
             isExpanded            : false,                                 // sets if nodes are initially expanded
-            nodeClass           : pluginName+'_node',                      //  generic node class
-            compositeClass      : pluginName+'_composite',                 //  composite node class
-            leafClass           : pluginName+'_leaf',                      //  leaf node class
-            childrenClass       : pluginName+'_children',                  //  node children class
-            chevronClass        : pluginName+'_chevron',                   //  chevron icon class
-            labelClass          : pluginName+'_label',                     //  label class
-            iconClass           : pluginName+'_icon',                      //  label icon class
-            expandedClass       : pluginName+'_expanded',                  //  opened node class
-            closedClass         : pluginName+'_closed',                    //  closed node class
-            checkboxClass       : pluginName+'_checkbox',                  //  checkbox class
-            incompleteClass     : pluginName+'_incomplete',                //  incomplete node class
-            vLineClass          : pluginName+'_vline',
+            nodeClass           : pluginName+'-node',                      //  generic node class
+            compositeClass      : pluginName+'-composite',                 //  composite node class
+            leafClass           : pluginName+'-leaf',                      //  leaf node class
+            childrenClass       : pluginName+'-children',                  //  node children class
+            chevronClass        : pluginName+'-chevron',                   //  chevron icon class
+            labelClass          : pluginName+'-label',                     //  label class
+            iconClass           : pluginName+'-icon',                      //  label icon class
+            expandedClass       : pluginName+'-expanded',                  //  opened node class
+            closedClass         : pluginName+'-closed',                    //  closed node class
+            checkboxClass       : pluginName+'-checkbox',                  //  checkbox class
+            incompleteClass     : pluginName+'-incomplete',                //  incomplete node class
+            vLineClass          : pluginName+'-vline',
+            dataClass           : pluginName+'-data',
             openTitle           : "Afficher la branche",
             closeTitle          : "Masquer la branche",
-            checkboxTitle       : "Attribuer le périmètre"
+            checkboxTitle       : "Attribuer le périmètre",
+            updateNodeTitle     : null,
+            onDataPush          : null
         };
 
     // The actual plugin constructor
@@ -150,7 +150,7 @@
             setHeight: function (node, settings, vItem) {
                 var count = vItem.getCount(node, settings);
                 var height = 0;
-                if (element.hasClass('has-data')) {
+                if (element.hasClass(settings.dataClass)) {
                     height = (count - 1) * settings._datavItemHeight + settings._datavLineOffset;
                 }
                 else {
@@ -197,8 +197,11 @@
                 values              : this.settings.dataSource.val().split(this.settings.dataSeparator),
 
                 /** pushes data to the source */
-                push: function () {
+                push: function (settings) {
                     this.source.val(this.values.join(this.separator));
+                    if ( typeof settings.onDataPush === 'function' ){
+                        settings.onDataPush(this.values);
+                    }
                 },
 
                 /** pulls data from the source */
@@ -311,6 +314,7 @@
             settings._vItemHeight        = 32;
             settings._datavItemHeight    = 36;
 
+
             // adding classes to li elements
             element.find('li').each(function () {
                 var $this = $(this);
@@ -331,6 +335,15 @@
                 .before('<span class="'+settings.iconClass+'"></span>')
                 .parent('label')
                 .before('<span class="'+settings.chevronClass+'"></span>');
+
+            // updating nodes title
+            element.find(settings._dotNodeClass).each(function() {
+                if ( typeof settings.updateNodeTitle === 'function' ){
+                    var $node = $(this);
+                    var $label  = $node.children('div').find(settings._dotLabelClass);
+                    $label.html(settings.updateNodeTitle($node, $label.text()));
+                }
+            });
 
             // initially opening/closing nodes according to settings
             element.find(settings._dotCompositeClass).each(function () {
@@ -358,6 +371,9 @@
 
             /* init tree with data */
             if (!$.isEmptyObject(data)) { // available data
+                // adding has-data class to element
+                element.addClass(settings.dataClass);
+
                 // adding checkbox elements
                 element // add checkboxes
                     .find(settings._dotIconClass)
@@ -388,7 +404,7 @@
                     // get data from leaf nodes
                     data.getLeafData(settings);
                     // push data to source
-                    data.push();
+                    data.push(settings);
                 });
 
                 for (var i = 0; i < data.initValues.length; i++) {
