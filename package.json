@@ -13,7 +13,8 @@
   "keywords": [
     "jquery",
     "plugin",
-    "tree"
+    "tree",
+    "bootstrap"
   ],
   "author": "Guillaume Limberger <glim.dev@gmail.com>",
   "license": "MIT",
