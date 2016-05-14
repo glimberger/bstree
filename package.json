@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glimberger/glimtree.git"
+    "url": "git+https://github.com/glimberger/bstree.git"
   },
   "keywords": [
     "jquery",
@@ -18,9 +18,9 @@
   "author": "Guillaume Limberger <glim.dev@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/glimberger/glimtree/issues"
+    "url": "https://github.com/glimberger/bstree/issues"
   },
-  "homepage": "https://github.com/glimberger/glimtree#readme",
+  "homepage": "https://github.com/glimberger/bstree#readme",
   "devDependencies": {
     "browser-sync": "^2.12.5",
     "gulp": "^3.9.1",
