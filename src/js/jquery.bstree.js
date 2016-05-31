@@ -408,7 +408,7 @@
                 });
 
                 for (var i = 0; i < data.initValues.length; i++) {
-                    element.find(settings._dotCompositeClass).each(function () {
+                    element.find(settings._dotNodeClass).each(function () {
                         var id = $(this).data('id');
                         if (id == data.initValues[i]) {
                             data.propagateToChildren($(this), true, settings);
