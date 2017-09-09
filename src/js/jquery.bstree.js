@@ -144,7 +144,7 @@
             },
             getCount: function (node, settings) {
                 var nb = node.children('ul').children(settings._dotVLineClass).attr('data-vitems');
-                if (undefined == nb) { return -1; }
+                if (undefined === nb) { return -1; }
                 return parseInt(nb);
             },
             setHeight: function (node, settings, vItem) {
@@ -251,10 +251,10 @@
                             // the node checkbox
                             var $checkbox = $parentNode.children('.checkbox').find(settings._dotCheckboxClass);
 
-                            if (check == checkCount) { // all siblings are checked
+                            if (check === checkCount) { // all siblings are checked
                                 $checkbox.prop('indeterminate', false).prop('checked', true);
                             }
-                            else if (check == 0) { // no siblings are checked
+                            else if (check === 0) { // no siblings are checked
                                 $checkbox.prop('indeterminate', false).prop('checked', false);
                                 // verify if children checkboxes are checked
                                 if ($parentNode.find('input:checked').length) {
