@@ -37,12 +37,6 @@ $hline-margintop:                   12px;
     border-top: 1px solid;
 }
 
-.bstree-data {
-    .bstree-vline {
-        height: calc(100% - 12px);
-    }
-}
-
 .bstree-incomplete > .checkbox label {
     text-decoration: underline;
 }
@@ -56,6 +50,11 @@ $hline-margintop:                   12px;
 }
 
 // re-align the checkbox button
-.c-checkbox .c-indicator {
+.custom-checkbox .custom-control-indicator {
     margin-top: 2px;
+}
+
+// re-align the chevron
+.bstree-data .fa {
+    vertical-align: 0;
 }
