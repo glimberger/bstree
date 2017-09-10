@@ -1,7 +1,7 @@
 {
   "name": "bs-tree",
-  "version": "0.2.0",
-  "description": "bs-tree is a jQuery plugin that provides dynamic trees build from html unordered lists.",
+  "version": "0.3.0",
+  "description": "bs-tree is a jQuery plugin provides dynamic trees built from html unordered lists.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
