@@ -35,7 +35,7 @@
 /*!
  The MIT License (MIT)
 
- Copyright (c) 2016 Guillaume Limberger
+ Copyright (c) 2016-2017 Guillaume Limberger
 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -144,7 +144,7 @@
             },
             getCount: function (node, settings) {
                 var nb = node.children('ul').children(settings._dotVLineClass).attr('data-vitems');
-                if (undefined == nb) { return -1; }
+                if (undefined === nb) { return -1; }
                 return parseInt(nb);
             },
             setHeight: function (node, settings, vItem) {
@@ -251,10 +251,10 @@
                             // the node checkbox
                             var $checkbox = $parentNode.children('.checkbox').find(settings._dotCheckboxClass);
 
-                            if (check == checkCount) { // all siblings are checked
+                            if (check === checkCount) { // all siblings are checked
                                 $checkbox.prop('indeterminate', false).prop('checked', true);
                             }
-                            else if (check == 0) { // no siblings are checked
+                            else if (check === 0) { // no siblings are checked
                                 $checkbox.prop('indeterminate', false).prop('checked', false);
                                 // verify if children checkboxes are checked
                                 if ($parentNode.find('input:checked').length) {
@@ -294,7 +294,7 @@
                 vItem    = this._vItem,
                 data     = this._data;
 
-            if (element.length == 0) {
+            if (element.length === 0) {
                 throw pluginName+" - the element is not valid.";
             }
 
@@ -312,7 +312,7 @@
             settings._vLineOffset        = 12;
             settings._datavLineOffset    = 12;
             settings._vItemHeight        = 32;
-            settings._datavItemHeight    = 36;
+            settings._datavItemHeight    = 32;
 
 
             // adding classes to li elements
@@ -324,9 +324,12 @@
                     $this.addClass(settings.nodeClass+' '+settings.leafClass);
                 }
             });
+
             // adding classes to ul elements (except the upmost one)
-            element.children('ul').find('ul').addClass(settings.childrenClass)
+            element.children('ul').find('ul')
+                .addClass(settings.childrenClass)
                 .prepend('<i class="'+settings.vLineClass+'"></i>');
+
             // adding classes to labels and wrapping them
             element.find('li > span').addClass(settings.labelClass)
                 .wrap('<div></div>').wrap('<label></label>');
@@ -375,11 +378,12 @@
                 element.addClass(settings.dataClass);
 
                 // adding checkbox elements
+                element.find(settings._dotLabelClass).addClass('custom-control-description');
                 element // add checkboxes
                     .find(settings._dotIconClass)
-                    .before('<input type="checkbox" class="'+settings.checkboxClass+'" title="'+settings.checkboxTitle+'">')
-                    .before('<span class="c-indicator" title="'+settings.checkboxTitle+'"></span>')
-                    .parent('label').addClass('c-input c-checkbox')
+                    .before('<input type="checkbox" class="custom-control-input '+settings.checkboxClass+'" title="'+settings.checkboxTitle+'">')
+                    .before('<span class="custom-control-indicator" title="'+settings.checkboxTitle+'"></span>')
+                    .parent('label').addClass('custom-control custom-checkbox')
                     .parent('div').addClass('checkbox');
                 // pulling data from the bound control
                 data.pull();
@@ -390,7 +394,7 @@
                 element.find(settings._dotCheckboxClass).change(function () {
                     var $this = $(this);
 
-                    if ($this.closest(settings._dotLeafClass).length == 0) { // checkbox of composite node
+                    if ($this.closest(settings._dotLeafClass).length === 0) { // checkbox of composite node
                         var $node = $(this).closest(settings._dotNodeClass);
                         data.resetIndeterminate($node, settings);
                         if ($this.prop('checked')) {
@@ -410,7 +414,7 @@
                 for (var i = 0; i < data.initValues.length; i++) {
                     element.find(settings._dotNodeClass).each(function () {
                         var id = $(this).data('id');
-                        if (id == data.initValues[i]) {
+                        if (id === data.initValues[i]) {
                             data.propagateToChildren($(this), true, settings);
                             $(this).find(settings._dotCheckboxClass).change();
                         }
