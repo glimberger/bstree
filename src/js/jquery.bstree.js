@@ -88,9 +88,9 @@
             incompleteClass     : pluginName+'-incomplete',                //  incomplete node class
             vLineClass          : pluginName+'-vline',
             dataClass           : pluginName+'-data',
-            openTitle           : "Afficher la branche",
-            closeTitle          : "Masquer la branche",
-            checkboxTitle       : "Attribuer le périmètre",
+            openTitle           : "Open",
+            closeTitle          : "Close",
+            checkboxTitle       : "Do action",
             updateNodeTitle     : null,
             onDataPush          : null
         };
