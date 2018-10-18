@@ -15,6 +15,9 @@
   width: 0;
   height: calc(100% - 20px); }
 
+.bstree-data .bstree-vline {
+  height: calc(100% - 12px); }
+
 .bstree-children li::before {
   position: absolute;
   height: 0;
@@ -25,9 +28,6 @@
   margin-top: 12px;
   border-top: 1px solid; }
 
-.bstree-data .bstree-vline {
-  height: calc(100% - 12px); }
-
 .bstree-incomplete > .checkbox label {
   text-decoration: underline; }
 
@@ -37,5 +37,11 @@
 .bstree input[type=checkbox] {
   margin-top: 0.3rem; }
 
-.c-checkbox .c-indicator {
+.custom-checkbox .custom-control-indicator {
   margin-top: 2px; }
+
+.bstree-data .fa {
+  vertical-align: 0; }
+
+.bstree-data .bstree-inner-container {
+  margin-bottom: 6px; }
