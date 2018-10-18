@@ -8,3 +8,5 @@ All generated html classes are modifiable. Chevron icons (from the [Font Awesome
 It's also possible to update node titles dynamically and trigger an action when data is updated.
 
 `bs-tree` currently supports Bootstrap 4.1.
+
+See the [demo](https://glimberger.github.io/bstree)
