@@ -3,366 +3,375 @@
 <head>
     <meta charset="UTF-8">
     <title>bstree Test</title>
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../src/css/font-awesome.css">
-    <link rel="stylesheet" href="../../src/css/bstree.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/bstree.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron text-center">
-            <h1 class="mb-5  display-3">bstree</h1>
-            <h1>Data demo</h1>
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="mb-5  display-3">bstree</h1>
+        <h1>Data demo</h1>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p id="status">Status : </p>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <p id="status">Status : </p>
-            </div>
-            <div class="col-12">
-                <input id="bstree-data" type="hidden" name="bstree-data" data-ancestors="ALS:IDF">
-                <div id="mytree" class="bstree">
-                    <ul>
-                        <li data-id="root" data-level="0"><span>Racine</span>
-                            <ul>
-                                <li data-id="ACL" data-level="1"><span>Alsace - Champagne-Ardenne - Lorraine</span>
-                                    <ul>
-                                        <li data-id="ALS" data-level="2"><span>Alsace</span>
-                                            <ul>
-                                                <li data-id="ALS01" data-level="3"><span>Colmar</span></li>
-                                                <li data-id="ALS02" data-level="3"><span>Mulhouse</span></li>
-                                                <li data-id="ALS03" data-level="3"><span>Darmstadt</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="CHA" data-level="2"><span>Champagne-Ardenne</span>
-                                            <ul>
-                                                <li data-id="CHA01" data-level="3"><span>Bazeilles</span></li>
-                                                <li data-id="CHA02" data-level="3"><span>Châlons-en-Champagne</span></li>
-                                                <li data-id="CHA03" data-level="3"><span>Charleville-Mézières</span></li>
-                                                <li data-id="CHA04" data-level="3"><span>Reims</span></li>
-                                                <li data-id="CHA05" data-level="3"><span>Saint-Dizier</span></li>
-                                                <li data-id="CHA06" data-level="3"><span>Troyes</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="LOR" data-level="2"><span>Lorraine</span>
-                                            <ul>
-                                                <li data-id="LOR01" data-level="3"><span>Cosnes-et-Romain</span></li>
-                                                <li data-id="LOR02" data-level="3"><span>Épinal</span></li>
-                                                <li data-id="LOR03" data-level="3"><span>Forbach</span></li>
-                                                <li data-id="LOR04" data-level="3"><span>Lunéville</span></li>
-                                                <li data-id="LOR05" data-level="3"><span>Metz</span></li>
-                                                <li data-id="LOR06" data-level="3"><span>Nancy</span></li>
-                                                <li data-id="LOR07" data-level="3"><span>Pont-à-Mousson</span></li>
-                                                <li data-id="LOR08" data-level="3"><span>Saint-Dié-des-Vosges</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="ALP" data-level="1"><span>Aquitaine - Limousin - Poitou-Charente</span>
-                                    <ul>
-                                        <li data-id="AQU" data-level="2"><span>Aquitaine</span>
-                                            <ul>
-                                                <li data-id="AQU01" data-level="3"><span>Anglet</span></li>
-                                                <li data-id="AQU02" data-level="3"><span>Bordeaux</span></li>
-                                                <li data-id="AQU03" data-level="3"><span>Pau</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="LIM" data-level="2"><span>Limousin</span>
-                                            <ul>
-                                                <li data-id="LIM01" data-level="3"><span>Brive-la-Gaillarde</span></li>
-                                                <li data-id="LIM02" data-level="3"><span>Limoges</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="PCH" data-level="2"><span>Poitou-Charentes</span>
-                                            <ul>
-                                                <li data-id="PCH01" data-level="3"><span>Angoulême</span></li>
-                                                <li data-id="PCH02" data-level="3"><span>Chasseneuil-du-Poitou</span></li>
-                                                <li data-id="PCH03" data-level="3"><span>La Rochelle</span></li>
-                                                <li data-id="PCH04" data-level="3"><span>Niort</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="ARH" data-level="1"><span>Auvergne - Rhône-Alpes</span>
-                                    <ul>
-                                        <li data-id="AUV" data-level="2"><span>Auvergne</span>
-                                            <ul>
-                                                <li data-id="AUV01" data-level="3"><span>Aubière</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="RHA" data-level="2"><span>Rhône-Alpes</span>
-                                            <ul>
-                                                <li data-id="RHA01" data-level="3"><span>Grand Lyon</span></li>
-                                                <li data-id="RHA02" data-level="3"><span>Drôme Ardèche</span></li>
-                                                <li data-id="RHA03" data-level="3"><span>Loire</span></li>
-                                                <li data-id="RHA04" data-level="3"><span>Isère Savoie</span></li>
-                                                <li data-id="RHA05" data-level="3"><span>Léman Ain Haute-Savoie</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="BFC" data-level="1"><span>Bourgogne - Franche-Comté</span>
-                                    <ul>
-                                        <li data-id="BRG" data-level="2"><span>BRG - Bourgogne</span>
-                                            <ul>
-                                                <li data-id="BRG01" data-level="3"><span>Auxerre</span></li>
-                                                <li data-id="BRG02" data-level="3"><span>Chalon-sur-Saône</span></li>
-                                                <li data-id="BRG03" data-level="3"><span>Dijon</span></li>
-                                                <li data-id="BRG04" data-level="3"><span>Nevers</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="FCO" data-level="2"><span>FCO - Franche-Comté</span>
-                                            <ul>
-                                                <li data-id="FCO01" data-level="3"><span>Belfort</span></li>
-                                                <li data-id="FCO02" data-level="3"><span>Besançon</span></li>
-                                                <li data-id="FCO03" data-level="3"><span>Exincourt</span></li>
-                                                <li data-id="FCO04" data-level="3"><span>Luxeuil-les-Bains</span></li>
-                                                <li data-id="FCO05" data-level="3"><span>Mamirolle</span></li>
-                                                <li data-id="FCO06" data-level="3"><span>Poligny</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="BRE" data-level="1"><span>Bretagne</span>
-                                    <ul>
-                                        <li data-id="BRT" data-level="2"><span>Bretagne</span>
-                                            <ul>
-                                                <li data-id="BRT01" data-level="3"><span>Brest</span></li>
-                                                <li data-id="BRT02" data-level="3"><span>Lannion</span></li>
-                                                <li data-id="BRT03" data-level="3"><span>Ploufragan</span></li>
-                                                <li data-id="BRT04" data-level="3"><span>Rennes</span></li>
-                                                <li data-id="BRT05" data-level="3"><span>Vannes</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="COS" data-level="1"><span>Corse</span>
-                                    <ul>
-                                        <li data-id="COR" data-level="2"><span>Corse</span>
-                                            <ul>
-                                                <li data-id="COR01" data-level="3"><span>Bastia</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="CPA" data-level="1"><span>Paris</span>
-                                    <ul>
-                                        <li data-id="CEP" data-level="2"><span>Centre d'enseignement de Paris</span>
-                                            <ul>
-                                                <li data-id="CEP01" data-level="3"><span>Paris</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="CVL" data-level="1"><span>Centre - Val de Loire</span>
-                                    <ul>
-                                        <li data-id="CEN" data-level="2"><span>Centre</span>
-                                            <ul>
-                                                <li data-id="CEN01" data-level="3"><span>Blois</span></li>
-                                                <li data-id="CEN02" data-level="3"><span>Bourges</span></li>
-                                                <li data-id="CEN03" data-level="3"><span>Chartres</span></li>
-                                                <li data-id="CEN04" data-level="3"><span>Châteauroux</span></li>
-                                                <li data-id="CEN05" data-level="3"><span>Orléans</span></li>
-                                                <li data-id="CEN06" data-level="3"><span>Tours</span></li>
-                                                <li data-id="CEN07" data-level="3"><span>Vierzon</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="GDL" data-level="1"><span>Guadeloupe</span>
-                                    <ul>
-                                        <li data-id="GUA" data-level="2"><span>Guadeloupe</span>
-                                            <ul>
-                                                <li data-id="GUA01" data-level="3"><span>Pointe-à-Pitre</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="GYA" data-level="1"><span>Guyane</span>
-                                    <ul>
-                                        <li data-id="GUY" data-level="2"><span>Guyane</span>
-                                            <ul>
-                                                <li data-id="GUY01" data-level="3"><span>OPRF Cnam</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="ILF" data-level="1"><span>Île-de-France</span>
-                                    <ul>
-                                        <li data-id="IDF" data-level="2"><span>Île-de-France</span>
-                                            <ul>
-                                                <li data-id="IDF01" data-level="3"><span>Boulogne</span></li>
-                                                <li data-id="IDF02" data-level="3"><span>Cergy-Pontoise</span></li>
-                                                <li data-id="IDF03" data-level="3"><span>Garges-Sarcelles</span></li>
-                                                <li data-id="IDF04" data-level="3"><span>Melun-Sénart</span></li>
-                                                <li data-id="IDF05" data-level="3"><span>Saint-Denis</span></li>
-                                                <li data-id="IDF06" data-level="3"><span>Mantes-la-Jolie</span></li>
-                                                <li data-id="IDF07" data-level="3"><span>Pantin</span></li>
-                                                <li data-id="IDF08" data-level="3"><span>Poissy</span></li>
-                                                <li data-id="IDF09" data-level="3"><span>Noisy-le-Grand</span></li>
-                                                <li data-id="IDF10" data-level="3"><span>Versailles</span></li>
-                                                <li data-id="IDF11" data-level="3"><span>Kremlin-Bicêtre</span></li>
-                                                <li data-id="IDF12" data-level="3"><span>Évry</span></li>
-                                                <li data-id="IDF13" data-level="3"><span>Créteil</span></li>
-                                                <li data-id="IDF14" data-level="3"><span>Palaiseau</span></li>
-                                                <li data-id="IDF15" data-level="3"><span>FOD IDF</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="LMP" data-level="1"><span>Languedoc-Roussillon - Midi-Pyrénées</span>
-                                    <ul>
-                                        <li data-id="LGR" data-level="2"><span>Languedoc-Roussillon</span>
-                                            <ul>
-                                                <li data-id="LGR01" data-level="3"><span>Bagnols-sur-Cèze</span></li>
-                                                <li data-id="LGR02" data-level="3"><span>Montpellier</span></li>
-                                                <li data-id="LGR03" data-level="3"><span>Nîmes</span></li>
-                                                <li data-id="LGR04" data-level="3"><span>Perpignan</span></li>
-                                                <li data-id="LGR05" data-level="3"><span>Mende</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="MPY" data-level="2"><span>Midi-Pyrénées</span>
-                                            <ul>
-                                                <li data-id="MPY01" data-level="3"><span>Millau</span></li>
-                                                <li data-id="MPY02" data-level="3"><span>Toulouse</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="LRE" data-level="1"><span>La Réunion</span>
-                                    <ul>
-                                        <li data-id="REU" data-level="2"><span>La Réunion</span>
-                                            <ul>
-                                                <li data-id="REU01" data-level="3"><span>Le Port</span></li>
-                                                <li data-id="REU02" data-level="3"><span>Saint-Louis</span></li>
-                                                <li data-id="REU03" data-level="3"><span>Saint-Benoît</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="MTN" data-level="1"><span>Martinique</span>
-                                    <ul>
-                                        <li data-id="MRT" data-level="2"><span>Martinique</span>
-                                            <ul>
-                                                <li data-id="MRT01" data-level="3"><span>Schœlcher</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="NCA" data-level="1"><span>Nouvelle Calédonie</span>
-                                    <ul>
-                                        <li data-id="NOU" data-level="2"><span>Nouvelle Calédonie</span>
-                                            <ul>
-                                                <li data-id="NOU01" data-level="3"><span>Nouméa</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="NOR" data-level="1"><span>Normandie</span>
-                                    <ul>
-                                        <li data-id="BNO" data-level="2"><span>Basse-Normandie</span>
-                                            <ul>
-                                                <li data-id="BNO01" data-level="3"><span>Caen</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="HNO" data-level="2"><span>Haute-Normandie</span>
-                                            <ul>
-                                                <li data-id="HNO01" data-level="3"><span>Le Havre</span></li>
-                                                <li data-id="HNO02" data-level="3"><span>Mont-Saint-Aignan</span></li>
-                                                <li data-id="HNO03" data-level="3"><span>Elbeuf</span></li>
-                                                <li data-id="HNO04" data-level="3"><span>Saint-Etienne-du-Rouvray</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="NPP" data-level="1"><span>Nord - Pas-de-Calais - Picardie</span>
-                                    <ul>
-                                        <li data-id="NPC" data-level="2"><span>Nord - Pas de Calais</span>
-                                            <ul>
-                                                <li data-id="NPC01" data-level="3"><span>Béthune</span></li>
-                                                <li data-id="NPC02" data-level="3"><span>Dunkerque</span></li>
-                                                <li data-id="NPC03" data-level="3"><span>Lille</span></li>
-                                                <li data-id="NPC04" data-level="3"><span>Maubeuge</span></li>
-                                                <li data-id="NPC05" data-level="3"><span>Valenciennes</span></li>
-                                            </ul>
-                                        </li>
-                                        <li data-id="PIC" data-level="2"><span>Picardie</span>
-                                            <ul>
-                                                <li data-id="PIC01" data-level="3"><span>Amiens</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="PCA" data-level="1"><span>Provence-Alpes-Côte d'Azur</span>
-                                    <ul>
-                                        <li data-id="PAC" data-level="2"><span>Provence -Alpes- Côte d'Azur</span>
-                                            <ul>
-                                                <li data-id="PAC01" data-level="3"><span>Aix-en-Provence</span></li>
-                                                <li data-id="PAC02" data-level="3"><span>Marseille</span></li>
-                                                <li data-id="PAC03" data-level="3"><span>Nice</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="PLL" data-level="1"><span>Pays de la Loire</span>
-                                    <ul>
-                                        <li data-id="PDL" data-level="2"><span>Pays de la Loire</span>
-                                            <ul>
-                                                <li data-id="PDL01" data-level="3"><span>Angers</span></li>
-                                                <li data-id="PDL02" data-level="3"><span>Cholet</span></li>
-                                                <li data-id="PDL03" data-level="3"><span>La Roche-sur-Yon</span></li>
-                                                <li data-id="PDL04" data-level="3"><span>Laval</span></li>
-                                                <li data-id="PDL05" data-level="3"><span>Le Mans</span></li>
-                                                <li data-id="PDL06" data-level="3"><span>Nantes</span></li>
-                                                <li data-id="PDL07" data-level="3"><span>Saint-Nazaire</span></li>
-                                                <li data-id="PDL08" data-level="3"><span>ICH</span></li>
-                                                <li data-id="PDL09" data-level="3"><span>IHIE</span></li>
-                                                <li data-id="PDL10" data-level="3"><span>Intec</span></li>
-                                                <li data-id="PDL11" data-level="3"><span>Iserpa</span></li>
-                                                <li data-id="PDL12" data-level="3"><span>Pôle management</span></li>
-                                                <li data-id="PDL13" data-level="3"><span>Pôle travail et développement</span></li>
-                                                <li data-id="PDL14" data-level="3"><span>Unité santé publique</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li data-id="POF" data-level="1"><span>Polynésie Française</span>
-                                    <ul>
-                                        <li data-id="POL" data-level="2"><span>Polynésie Française</span>
-                                            <ul>
-                                                <li data-id="POL01" data-level="3"><span>Papeete</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+        <div class="col-12">
+            <input id="bstree-data" type="hidden" name="bstree-data" data-ancestors="ALS:IDF">
+            <div id="mytree" class="bstree">
+                <ul>
+                    <li data-id="root" data-level="0"><span>Racine</span>
+                        <ul>
+                            <li data-id="ACL" data-level="1"><span>Alsace - Champagne-Ardenne - Lorraine</span>
+                                <ul>
+                                    <li data-id="ALS" data-level="2"><span>Alsace</span>
+                                        <ul>
+                                            <li data-id="ALS01" data-level="3"><span>Colmar</span></li>
+                                            <li data-id="ALS02" data-level="3"><span>Mulhouse</span></li>
+                                            <li data-id="ALS03" data-level="3"><span>Darmstadt</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="CHA" data-level="2"><span>Champagne-Ardenne</span>
+                                        <ul>
+                                            <li data-id="CHA01" data-level="3"><span>Bazeilles</span></li>
+                                            <li data-id="CHA02" data-level="3"><span>Châlons-en-Champagne</span></li>
+                                            <li data-id="CHA03" data-level="3"><span>Charleville-Mézières</span></li>
+                                            <li data-id="CHA04" data-level="3"><span>Reims</span></li>
+                                            <li data-id="CHA05" data-level="3"><span>Saint-Dizier</span></li>
+                                            <li data-id="CHA06" data-level="3"><span>Troyes</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="LOR" data-level="2"><span>Lorraine</span>
+                                        <ul>
+                                            <li data-id="LOR01" data-level="3"><span>Cosnes-et-Romain</span></li>
+                                            <li data-id="LOR02" data-level="3"><span>Épinal</span></li>
+                                            <li data-id="LOR03" data-level="3"><span>Forbach</span></li>
+                                            <li data-id="LOR04" data-level="3"><span>Lunéville</span></li>
+                                            <li data-id="LOR05" data-level="3"><span>Metz</span></li>
+                                            <li data-id="LOR06" data-level="3"><span>Nancy</span></li>
+                                            <li data-id="LOR07" data-level="3"><span>Pont-à-Mousson</span></li>
+                                            <li data-id="LOR08" data-level="3"><span>Saint-Dié-des-Vosges</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="ALP" data-level="1"><span>Aquitaine - Limousin - Poitou-Charente</span>
+                                <ul>
+                                    <li data-id="AQU" data-level="2"><span>Aquitaine</span>
+                                        <ul>
+                                            <li data-id="AQU01" data-level="3"><span>Anglet</span></li>
+                                            <li data-id="AQU02" data-level="3"><span>Bordeaux</span></li>
+                                            <li data-id="AQU03" data-level="3"><span>Pau</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="LIM" data-level="2"><span>Limousin</span>
+                                        <ul>
+                                            <li data-id="LIM01" data-level="3"><span>Brive-la-Gaillarde</span></li>
+                                            <li data-id="LIM02" data-level="3"><span>Limoges</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="PCH" data-level="2"><span>Poitou-Charentes</span>
+                                        <ul>
+                                            <li data-id="PCH01" data-level="3"><span>Angoulême</span></li>
+                                            <li data-id="PCH02" data-level="3"><span>Chasseneuil-du-Poitou</span></li>
+                                            <li data-id="PCH03" data-level="3"><span>La Rochelle</span></li>
+                                            <li data-id="PCH04" data-level="3"><span>Niort</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="ARH" data-level="1"><span>Auvergne - Rhône-Alpes</span>
+                                <ul>
+                                    <li data-id="AUV" data-level="2"><span>Auvergne</span>
+                                        <ul>
+                                            <li data-id="AUV01" data-level="3"><span>Aubière</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="RHA" data-level="2"><span>Rhône-Alpes</span>
+                                        <ul>
+                                            <li data-id="RHA01" data-level="3"><span>Grand Lyon</span></li>
+                                            <li data-id="RHA02" data-level="3"><span>Drôme Ardèche</span></li>
+                                            <li data-id="RHA03" data-level="3"><span>Loire</span></li>
+                                            <li data-id="RHA04" data-level="3"><span>Isère Savoie</span></li>
+                                            <li data-id="RHA05" data-level="3"><span>Léman Ain Haute-Savoie</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="BFC" data-level="1"><span>Bourgogne - Franche-Comté</span>
+                                <ul>
+                                    <li data-id="BRG" data-level="2"><span>BRG - Bourgogne</span>
+                                        <ul>
+                                            <li data-id="BRG01" data-level="3"><span>Auxerre</span></li>
+                                            <li data-id="BRG02" data-level="3"><span>Chalon-sur-Saône</span></li>
+                                            <li data-id="BRG03" data-level="3"><span>Dijon</span></li>
+                                            <li data-id="BRG04" data-level="3"><span>Nevers</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="FCO" data-level="2"><span>FCO - Franche-Comté</span>
+                                        <ul>
+                                            <li data-id="FCO01" data-level="3"><span>Belfort</span></li>
+                                            <li data-id="FCO02" data-level="3"><span>Besançon</span></li>
+                                            <li data-id="FCO03" data-level="3"><span>Exincourt</span></li>
+                                            <li data-id="FCO04" data-level="3"><span>Luxeuil-les-Bains</span></li>
+                                            <li data-id="FCO05" data-level="3"><span>Mamirolle</span></li>
+                                            <li data-id="FCO06" data-level="3"><span>Poligny</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="BRE" data-level="1"><span>Bretagne</span>
+                                <ul>
+                                    <li data-id="BRT" data-level="2"><span>Bretagne</span>
+                                        <ul>
+                                            <li data-id="BRT01" data-level="3"><span>Brest</span></li>
+                                            <li data-id="BRT02" data-level="3"><span>Lannion</span></li>
+                                            <li data-id="BRT03" data-level="3"><span>Ploufragan</span></li>
+                                            <li data-id="BRT04" data-level="3"><span>Rennes</span></li>
+                                            <li data-id="BRT05" data-level="3"><span>Vannes</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="COS" data-level="1"><span>Corse</span>
+                                <ul>
+                                    <li data-id="COR" data-level="2"><span>Corse</span>
+                                        <ul>
+                                            <li data-id="COR01" data-level="3"><span>Bastia</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="CPA" data-level="1"><span>Paris</span>
+                                <ul>
+                                    <li data-id="CEP" data-level="2"><span>Centre d'enseignement de Paris</span>
+                                        <ul>
+                                            <li data-id="CEP01" data-level="3"><span>Paris</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="CVL" data-level="1"><span>Centre - Val de Loire</span>
+                                <ul>
+                                    <li data-id="CEN" data-level="2"><span>Centre</span>
+                                        <ul>
+                                            <li data-id="CEN01" data-level="3"><span>Blois</span></li>
+                                            <li data-id="CEN02" data-level="3"><span>Bourges</span></li>
+                                            <li data-id="CEN03" data-level="3"><span>Chartres</span></li>
+                                            <li data-id="CEN04" data-level="3"><span>Châteauroux</span></li>
+                                            <li data-id="CEN05" data-level="3"><span>Orléans</span></li>
+                                            <li data-id="CEN06" data-level="3"><span>Tours</span></li>
+                                            <li data-id="CEN07" data-level="3"><span>Vierzon</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="GDL" data-level="1"><span>Guadeloupe</span>
+                                <ul>
+                                    <li data-id="GUA" data-level="2"><span>Guadeloupe</span>
+                                        <ul>
+                                            <li data-id="GUA01" data-level="3"><span>Pointe-à-Pitre</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="GYA" data-level="1"><span>Guyane</span>
+                                <ul>
+                                    <li data-id="GUY" data-level="2"><span>Guyane</span>
+                                        <ul>
+                                            <li data-id="GUY01" data-level="3"><span>OPRF Cnam</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="ILF" data-level="1"><span>Île-de-France</span>
+                                <ul>
+                                    <li data-id="IDF" data-level="2"><span>Île-de-France</span>
+                                        <ul>
+                                            <li data-id="IDF01" data-level="3"><span>Boulogne</span></li>
+                                            <li data-id="IDF02" data-level="3"><span>Cergy-Pontoise</span></li>
+                                            <li data-id="IDF03" data-level="3"><span>Garges-Sarcelles</span></li>
+                                            <li data-id="IDF04" data-level="3"><span>Melun-Sénart</span></li>
+                                            <li data-id="IDF05" data-level="3"><span>Saint-Denis</span></li>
+                                            <li data-id="IDF06" data-level="3"><span>Mantes-la-Jolie</span></li>
+                                            <li data-id="IDF07" data-level="3"><span>Pantin</span></li>
+                                            <li data-id="IDF08" data-level="3"><span>Poissy</span></li>
+                                            <li data-id="IDF09" data-level="3"><span>Noisy-le-Grand</span></li>
+                                            <li data-id="IDF10" data-level="3"><span>Versailles</span></li>
+                                            <li data-id="IDF11" data-level="3"><span>Kremlin-Bicêtre</span></li>
+                                            <li data-id="IDF12" data-level="3"><span>Évry</span></li>
+                                            <li data-id="IDF13" data-level="3"><span>Créteil</span></li>
+                                            <li data-id="IDF14" data-level="3"><span>Palaiseau</span></li>
+                                            <li data-id="IDF15" data-level="3"><span>FOD IDF</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="LMP" data-level="1"><span>Languedoc-Roussillon - Midi-Pyrénées</span>
+                                <ul>
+                                    <li data-id="LGR" data-level="2"><span>Languedoc-Roussillon</span>
+                                        <ul>
+                                            <li data-id="LGR01" data-level="3"><span>Bagnols-sur-Cèze</span></li>
+                                            <li data-id="LGR02" data-level="3"><span>Montpellier</span></li>
+                                            <li data-id="LGR03" data-level="3"><span>Nîmes</span></li>
+                                            <li data-id="LGR04" data-level="3"><span>Perpignan</span></li>
+                                            <li data-id="LGR05" data-level="3"><span>Mende</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="MPY" data-level="2"><span>Midi-Pyrénées</span>
+                                        <ul>
+                                            <li data-id="MPY01" data-level="3"><span>Millau</span></li>
+                                            <li data-id="MPY02" data-level="3"><span>Toulouse</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="LRE" data-level="1"><span>La Réunion</span>
+                                <ul>
+                                    <li data-id="REU" data-level="2"><span>La Réunion</span>
+                                        <ul>
+                                            <li data-id="REU01" data-level="3"><span>Le Port</span></li>
+                                            <li data-id="REU02" data-level="3"><span>Saint-Louis</span></li>
+                                            <li data-id="REU03" data-level="3"><span>Saint-Benoît</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="MTN" data-level="1"><span>Martinique</span>
+                                <ul>
+                                    <li data-id="MRT" data-level="2"><span>Martinique</span>
+                                        <ul>
+                                            <li data-id="MRT01" data-level="3"><span>Schœlcher</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="NCA" data-level="1"><span>Nouvelle Calédonie</span>
+                                <ul>
+                                    <li data-id="NOU" data-level="2"><span>Nouvelle Calédonie</span>
+                                        <ul>
+                                            <li data-id="NOU01" data-level="3"><span>Nouméa</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="NOR" data-level="1"><span>Normandie</span>
+                                <ul>
+                                    <li data-id="BNO" data-level="2"><span>Basse-Normandie</span>
+                                        <ul>
+                                            <li data-id="BNO01" data-level="3"><span>Caen</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="HNO" data-level="2"><span>Haute-Normandie</span>
+                                        <ul>
+                                            <li data-id="HNO01" data-level="3"><span>Le Havre</span></li>
+                                            <li data-id="HNO02" data-level="3"><span>Mont-Saint-Aignan</span></li>
+                                            <li data-id="HNO03" data-level="3"><span>Elbeuf</span></li>
+                                            <li data-id="HNO04" data-level="3"><span>Saint-Etienne-du-Rouvray</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="NPP" data-level="1"><span>Nord - Pas-de-Calais - Picardie</span>
+                                <ul>
+                                    <li data-id="NPC" data-level="2"><span>Nord - Pas de Calais</span>
+                                        <ul>
+                                            <li data-id="NPC01" data-level="3"><span>Béthune</span></li>
+                                            <li data-id="NPC02" data-level="3"><span>Dunkerque</span></li>
+                                            <li data-id="NPC03" data-level="3"><span>Lille</span></li>
+                                            <li data-id="NPC04" data-level="3"><span>Maubeuge</span></li>
+                                            <li data-id="NPC05" data-level="3"><span>Valenciennes</span></li>
+                                        </ul>
+                                    </li>
+                                    <li data-id="PIC" data-level="2"><span>Picardie</span>
+                                        <ul>
+                                            <li data-id="PIC01" data-level="3"><span>Amiens</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="PCA" data-level="1"><span>Provence-Alpes-Côte d'Azur</span>
+                                <ul>
+                                    <li data-id="PAC" data-level="2"><span>Provence -Alpes- Côte d'Azur</span>
+                                        <ul>
+                                            <li data-id="PAC01" data-level="3"><span>Aix-en-Provence</span></li>
+                                            <li data-id="PAC02" data-level="3"><span>Marseille</span></li>
+                                            <li data-id="PAC03" data-level="3"><span>Nice</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="PLL" data-level="1"><span>Pays de la Loire</span>
+                                <ul>
+                                    <li data-id="PDL" data-level="2"><span>Pays de la Loire</span>
+                                        <ul>
+                                            <li data-id="PDL01" data-level="3"><span>Angers</span></li>
+                                            <li data-id="PDL02" data-level="3"><span>Cholet</span></li>
+                                            <li data-id="PDL03" data-level="3"><span>La Roche-sur-Yon</span></li>
+                                            <li data-id="PDL04" data-level="3"><span>Laval</span></li>
+                                            <li data-id="PDL05" data-level="3"><span>Le Mans</span></li>
+                                            <li data-id="PDL06" data-level="3"><span>Nantes</span></li>
+                                            <li data-id="PDL07" data-level="3"><span>Saint-Nazaire</span></li>
+                                            <li data-id="PDL08" data-level="3"><span>ICH</span></li>
+                                            <li data-id="PDL09" data-level="3"><span>IHIE</span></li>
+                                            <li data-id="PDL10" data-level="3"><span>Intec</span></li>
+                                            <li data-id="PDL11" data-level="3"><span>Iserpa</span></li>
+                                            <li data-id="PDL12" data-level="3"><span>Pôle management</span></li>
+                                            <li data-id="PDL13" data-level="3">
+                                                <span>Pôle travail et développement</span></li>
+                                            <li data-id="PDL14" data-level="3"><span>Unité santé publique</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li data-id="POF" data-level="1"><span>Polynésie Française</span>
+                                <ul>
+                                    <li data-id="POL" data-level="2"><span>Polynésie Française</span>
+                                        <ul>
+                                            <li data-id="POL01" data-level="3"><span>Papeete</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../../node_modules/popper.js/dist/popper.min.js"></script>
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../src/js/jquery.bstree.js"></script>
-    <script>
-        $("document").ready(function () {
-            $hiddenInput = $('#bstree-data');
-            $('#mytree').bstree({
-                dataSource: $hiddenInput,
-                initValues: $hiddenInput.data('ancestors'),
-                onDataPush: function (values) {
-                    var def = '<strong class="pull-left">Values:&nbsp;</strong>';
-                    for (var i in values) {
-                        def += '<span class="pull-left">' + values[i] + '&nbsp;</span>';
-                    }
-                    $('#status').html(def);
-                },
-                updateNodeTitle: function (node, title) {
-                    return '[' + node.attr('data-id') + '] ' + title + ' (' + node.attr('data-level') + ')';
-                }
-            });
-        });
-    </script>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="../../src/js/jquery.bstree.js"></script>
+<script>
+  $('document').ready(function () {
+    $hiddenInput = $('#bstree-data')
+    $('#mytree').bstree({
+      dataSource: $hiddenInput,
+      initValues: $hiddenInput.data('ancestors'),
+      onDataPush: function (values) {
+        var def = '<strong class="pull-left">Values:&nbsp;</strong>'
+        for (var i in values) {
+          def += '<span class="pull-left">' + values[i] + '&nbsp;</span>'
+        }
+        $('#status').html(def)
+      },
+      updateNodeTitle: function (node, title) {
+        return '[' + node.attr('data-id') + '] ' + title + ' (' + node.attr('data-level') + ')'
+      }
+    })
+  })
+</script>
 </body>
 </html>
