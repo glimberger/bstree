@@ -26,6 +26,10 @@ $hline-margintop:                   12px;
     height: calc(100% - 20px);
 }
 
+.bstree-data .bstree-vline {
+    height: calc(100% - 12px);
+}
+
 .bstree-children li::before {
     position: absolute;
     height: 0;
@@ -57,4 +61,8 @@ $hline-margintop:                   12px;
 // re-align the chevron
 .bstree-data .fa {
     vertical-align: 0;
+}
+
+.bstree-data .bstree-inner-container {
+    margin-bottom: 6px;
 }
